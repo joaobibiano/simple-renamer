@@ -27,11 +27,11 @@ function getAllFilesSubDirectory(_path) {
     return files;
 }
 
-function isJsxFile(path) {
-    return path.endsWith('.jsx');
+function shouldReplace(path) {
+    return path.endsWith(REPLACE_FROM);
 }
 
-function replaceJsxToJs(path) {
+function replaceFromTo(path) {
     fs.renameSync(path, path.replace(REPLACE_FROM, REPLACE_TO));
     console.log(`Replaced file ${path}`);
 }
@@ -48,4 +48,4 @@ function isDirectory(path) {
 
 const files = getAllFilesSubDirectory(basePath);
 
-files.forEach(item => isJsxFile(item) ? replaceJsxToJs(item) : null);
+files.forEach(item => shouldReplace(item) ? replaceFromTo(item) : null);
