@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE_PATH = "C:\\Projects\\tmswebreact\\src";
+const BASE_PATH = "C:\\Projects\\src";
 const REPLACE_FROM = ".jsx";
 const REPLACE_TO = ".js";
 const RECURSIVELY = true;
